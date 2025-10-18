@@ -1,16 +1,55 @@
-# React + Vite
+# Dynamic UI Editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## Component Architecture
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+| Component | Description |
+|------------|--------------|
+| **App.jsx** | Root component managing state (`useReducer`) and rendering `EditorPanel` and `LivePreview`. |
+| **EditorPanel.jsx** | Sidebar for all adjustable controls (typography, buttons, layout, etc.). |
+| **LivePreview.jsx** | Main preview area rendering UI updates via CSS variables. |
+| **CustomizerPanel.jsx** | Dynamic right panel that supports Compact and Tabbed layouts. |
+| **Gallery.jsx** | Displays product thumbnails; alignment and spacing configurable. |
+| **Controls.jsx** | Floating buttons (Zoom, Focus, etc.). |
+| **ViewInRoom.jsx** | Minimal call-to-action button for AR simulation. |
+| **ProductViewer.jsx** | Displays main product image and shadow effects. |
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Configurable Props
 
-## Expanding the ESLint configuration
+All adjustable properties are stored in the `settings` object inside **App.jsx** and passed as CSS variables to `LivePreview.jsx`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Category | Properties | Description |
+|-----------|-------------|-------------|
+| Typography | `fontFamily`, `fontWeight`, `fontSize` | Controls global font family, weight, and size. |
+| Buttons | `btnBg`, `btnColor`, `btnRadius`, `btnShadow`, `btnAlign` | Defines button appearance and alignment. |
+| Gallery | `galleryAlign`, `galleryGap`, `galleryRadius` | Adjusts thumbnail positioning and spacing. |
+| Layout & Stroke | `cardRadius`, `containerPadding`, `strokeColor`, `strokeWeight`, `sectionBg` | Modifies panel radius, padding, and stroke. |
+| Customizer Layout | `customizerLayout` | Switch between Compact and Tabbed views. |
+
+---
+
+## How It Works
+
+1. **State Management**  
+   All settings are handled via React’s `useReducer`, which merges updates from editor inputs into a single state object.
+
+2. **Live Updates with CSS Variables**  
+   `LivePreview` applies all settings as CSS variables (e.g., `--font-size`, `--btn-bg`) for instant updates without re-rendering.
+
+3. **Persistence**  
+   Changes are saved in `localStorage` and restored automatically on reload.
+
+4. **Sync Between Editor and Preview**  
+   Input changes in `EditorPanel` dispatch actions that immediately reflect in the preview via shared state.
+
+---
+
+## Future Enhancements
+* Added support for different screensizes
+* Moving the thumbnails across the Product viewer screen
+* Add color palette presets (save & load themes)
+* Implement drag-and-drop thumbnail reordering
+* Export as JSON schema for integrating with external design systems
