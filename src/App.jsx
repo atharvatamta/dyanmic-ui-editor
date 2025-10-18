@@ -52,11 +52,13 @@ export default function App() {
 
   return (
     <div className="app">
-      <EditorPanel
+       
+      <EditorPanel className="editor-panel"
         settings={settings}
         onChange={(patch) => dispatch({ type: "merge", payload: patch })}
       />
-      <LivePreview settings={settings} />
+      <LivePreview settings={settings} /> {/* move this below ditor panel later*/}
+     
     </div>
   );
 }

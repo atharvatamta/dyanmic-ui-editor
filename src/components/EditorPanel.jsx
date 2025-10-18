@@ -1,8 +1,9 @@
-export default function EditorPanel({ settings, onChange }) {
+export default function EditorPanel({ settings, onChange ,className = "" }) {
   const set = (patch) => onChange(patch);
 
   return (
-    <aside className="editor">
+        <aside className={`editor ${className}`}>
+      
       <h2>Dynamic UI Editor</h2>
 
       {/* Typography */}
