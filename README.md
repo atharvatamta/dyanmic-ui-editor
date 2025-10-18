@@ -1,5 +1,12 @@
 # Dynamic UI Editor
 
+## web layout:
+<img width="1470" height="833" alt="Screenshot 2025-10-18 at 23 28 00" src="https://github.com/user-attachments/assets/8f4c642e-c4a9-4e41-b724-7eb7a3ac58e1" />
+
+## mobile layout:
+
+<img width="656" height="1494" alt="image" src="https://github.com/user-attachments/assets/e4d949e2-8b87-43a9-a6e7-2cb8ae749d5f" />
+
 ---
 
 ## Component Architecture
