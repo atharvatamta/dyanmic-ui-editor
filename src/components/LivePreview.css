@@ -196,6 +196,7 @@
   
   /* === Option Cards === */
   .option-card {
+    font-size: inherit;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -207,6 +208,7 @@
   }
   
   .option-card.active {
+    font-size: inherit;
     background: var(--section-bg);
   }
   
@@ -224,15 +226,15 @@
   }
   
   .option-text h4 {
-    font-size: 18px;
-    font-weight: 600;
+    font-size: inherit;
+    font-weight: inherit;;
     color: #333;
   }
   
   .option-text p {
     color: #a0a0a0;
-    font-size: 15px;
-    font-weight: bold;
+    font-size: inherit;
+    font-weight: inherit;
   }
   
   .dropdown-icon {
@@ -251,8 +253,8 @@
   }
   
   .swatch-group h5 {
-    font-size: 13px;
-    font-weight: 600;
+    font-size: inherit;
+    font-weight: inherit;
     color: #999;
     margin-bottom: 10px;
   }
@@ -340,7 +342,7 @@
   
   .label {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: inherit;
     color: #646464;
   }
   
@@ -352,12 +354,13 @@
   
   .now {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: inherit;
     color: #000;
   }
   
   .was {
     text-decoration: line-through;
+    font-weight: inherit;
     color: #a9a9a9;
   }
   
@@ -365,7 +368,7 @@
     background: var(--btn-bg);
     color: var(--btn-color);
     border: none;
-    font-weight: 600;
+    font-weight: inherit;
     border-radius: var(--btn-radius);
     width: 160px;
     height: 46px;

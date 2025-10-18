@@ -25,11 +25,11 @@
       }}
     >
       {[
-        "/assets/thumb1.png",
-        "/assets/thumb2.png",
-        "/assets/thumb3.png",
-        "/assets/thumb4.png",
-      ].map((src, i) => (
+  `${import.meta.env.BASE_URL}assets/thumb1.png`,
+  `${import.meta.env.BASE_URL}assets/thumb2.png`,
+  `${import.meta.env.BASE_URL}assets/thumb3.png`,
+  `${import.meta.env.BASE_URL}assets/thumb4.png`,
+].map((src, i) => (
         <img
           key={i}
           src={src}

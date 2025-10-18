@@ -23,7 +23,7 @@ export default function CustomizerPanel({ settings }) {
         {/* Shared top section for BOTH layouts */}
         <div className="option-card">
           <div className="option-header">
-            <img src="/assets/arms.png" alt="arms" className="option-thumb" />
+            <img src={`${import.meta.env.BASE_URL}assets/arms.png`} alt="arms" className="option-thumb" />
             <div className="option-text">
               <h4>1. Arms</h4>
               <p>Fixed Arms</p>
@@ -35,7 +35,7 @@ export default function CustomizerPanel({ settings }) {
         <div className="option-card active">
           <div className="option-header">
             <img
-              src="/assets/arms-finish.jpg"
+              src={`${import.meta.env.BASE_URL}assets/arms-finish.jpg`}
               alt="arms finish"
               className="option-thumb"
             />
@@ -53,7 +53,7 @@ export default function CustomizerPanel({ settings }) {
         {/* Legs stays visible in BOTH layouts */}
         <div className="option-card">
           <div className="option-header">
-            <img src="/assets/legs.png" alt="legs" className="option-thumb" />
+            <img src={`${import.meta.env.BASE_URL}assets/legs.png`} alt="legs" className="option-thumb" />
             <div className="option-text">
               <h4>3. Legs Finish</h4>
               <p>Steel</p>
